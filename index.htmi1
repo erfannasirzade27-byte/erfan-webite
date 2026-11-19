@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عرفان نصیرزاده | وب‌سایت شخصی</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --navy: #080d25;
+  --blue: #00d9ff;
+  --purple: #9b5cff;
+  --white: #f5f7ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 15% 20%, #172b66 0%, transparent 35%),
+    radial-gradient(circle at 85% 70%, #35165c 0%, transparent 35%);
+}
+
+/* NAVBAR */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(8,13,37,.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid #ffffff15;
+}
+
+nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  color: var(--blue);
+  text-shadow: 0 0 15px var(--blue);
+}
+
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--blue);
+  text-shadow: 0 0 12px var(--blue);
+}
+
+.menu-btn {
+  display: none;
+  font-size: 27px;
+  color: var(--blue);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* HERO */
+section {
+  padding: 110px 8%;
+  scroll-margin-top: 65px;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  animation: appear 1.2s ease;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 7vw, 70px);
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--blue);
+  text-shadow: 0 0 25px #00d9ff99;
+}
+
+.hero p {
+  color: #b7c2e6;
+  font-size: 19px;
+  line-height: 2;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 25px;
+  border: 1px solid var(--purple);
+  border-radius: 30px;
+  color: #cba9ff;
+  box-shadow: 0 0 15px #9b5cff44;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 13px 35px;
+  background: linear-gradient(100deg,var(--blue),var(--purple));
+  border-radius: 12px;
+  color: #080d25;
+  font-weight: 900;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--blue);
+}
+
+/* TITLES */
+.title {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 50px;
+}
+
+.title span {
+  color: var(--blue);
+}
+
+/* CARDS */
+.cards {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 25px;
+}
+
+.card {
+  padding: 35px 25px;
+  background: linear-gradient(145deg,#121d40,#11142e);
+  border: 1px solid #263a70;
+  border-radius: 20px;
+  text-align: center;
+  transition: .4s;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.03);
+  border-color: var(--blue);
+  box-shadow: 0 0 25px #00d9ff33;
+}
+
+.card .icon {
+  font-size: 45px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  color: var(--blue);
+  margin-bottom: 15px;
+  font-size: 21px;
+}
+
+.card p {
+  color: #b9c3df;
+  line-height: 2;
+}
+
+/* ABOUT */
+.about {
+  max-width: 850px;
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+  background: #121a37aa;
+  border: 1px solid #9b5cff55;
+  border-radius: 20px;
+  line-height: 2.5;
+  transition: .4s;
+}
+
+.about:hover {
+  box-shadow: 0 0 25px #9b5cff44;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 45px 20px;
+  background: #060a1c;
+  border-top: 1px solid #ffffff15;
+}
+
+footer h2 {
+  color: var(--purple);
+  font-size: 26px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px var(--purple);
+}
+
+footer p {
+  color: #9ba9ce;
+  line-height: 2;
+}
+
+.special {
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+/* ANIMATIONS */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width:768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    padding: 25px;
+    background: #0c1430;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  section {
+    padding: 100px 6%;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .about {
+    padding: 25px 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <div class="logo">ERFAN.N</div>
+
+  <button class="menu-btn"
+  onclick="toggleMenu()"
+  aria-label="باز کردن منو">☰</button>
+
+  <ul id="menu">
+    <li><a href="#home" onclick="closeMenu()">خانه</a></li>
+    <li><a href="#about" onclick="closeMenu()">درباره من</a></li>
+    <li><a href="#interests" onclick="closeMenu()">علاقه‌مندی‌ها</a></li>
+    <li><a href="#football" onclick="closeMenu()">فوتبال</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+<div class="hero-content">
+
+  <h1>سلام، من <span>عرفان نصیرزاده</span> هستم</h1>
+
+  <p>
+    ۱۸ ساله، عاشق تکنولوژی، هوش مصنوعی و فوتبال<br>
+    همیشه در مسیر پیشرفت و رسیدن به قله‌های موفقیت
+  </p>
+
+  <div class="tag">WELCOME TO MY WORLD</div>
+  <br>
+
+  <a href="#about" class="btn">بیشتر درباره من</a>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+<h2 class="title">درباره <span>من</span></h2>
+
+<div class="about">
+
+  <h2 style="color:#00d9ff">عرفان نصیرزاده</h2>
+
+  <p>
+    من عرفان نصیرزاده هستم، ۱۸ سال دارم.
+    به دنیای کامپیوتر و تکنولوژی علاقه زیادی دارم
+    و همیشه دوست دارم چیزهای جدید یاد بگیرم.
+    هوش مصنوعی یکی از جذاب‌ترین حوزه‌ها برای من است.
+    در کنار تکنولوژی، فوتبال بخش مهمی از زندگی من است
+    و برای موفقیت و قهرمانی تلاش می‌کنم.
+  </p>
+
+</div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests">
+
+<h2 class="title">علاقه‌<span>مندی‌های من</span></h2>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="icon">💻</div>
+    <h3>کامپیوتر</h3>
+    <p>
+      علاقه‌مند به دنیای کامپیوتر،
+      برنامه‌نویسی و تکنولوژی‌های جدید.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🤖</div>
+    <h3>هوش مصنوعی</h3>
+    <p>
+      علاقه به هوش مصنوعی، آینده تکنولوژی
+      و کشف دنیای هوشمند.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🚀</div>
+    <h3>پیشرفت</h3>
+    <p>
+      یادگیری، تلاش و ساختن آینده‌ای بهتر
+      با انگیزه و پشتکار.
+    </p>
+  </div>
+
+</div>
+</section>
+
+<!-- FOOTBALL -->
+<section id="football">
+
+<h2 class="title">دنیای <span>فوتبال</span></h2>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="icon">⚽</div>
+    <h3>تیم رهروان</h3>
+    <p>
+      فوتبال یکی از مهم‌ترین علاقه‌های من است.
+      در تیم رهروان برای موفقیت تلاش می‌کنم.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🏆</div>
+    <h3>سابقه قهرمانی</h3>
+    <p>
+      کسب عنوان قهرمانی فوتبال با تیم رهروان؛
+      افتخاری ارزشمند حاصل تلاش، تمرین و روحیه تیمی.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🔥</div>
+    <h3>انگیزه و تلاش</h3>
+    <p>
+      با تمرین، پشتکار و روحیه تیمی
+      برای رسیدن به اهدافم می‌جنگم.
+    </p>
+  </div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <h2>ERFAN NASIRZADEH</h2>
+
+  <p>
+    این دنیا برای آدم‌هایی است که برای رویاهایشان می‌جنگند.
+  </p>
+
+  <div class="special">سیش دیدیم بشاقاب ینن</div>
+
+  <p style="margin-top:25px;font-size:13px">
+    © 2026 | طراحی شده با عشق توسط عرفان نصیرزاده
+  </p>
+
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('active');
+}
+
+function closeMenu() {
+  document.getElementById('menu').classList.remove('active');
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
